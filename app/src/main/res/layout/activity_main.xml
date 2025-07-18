@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp">
+
+    <TextView
+        android:text="Infinity CTF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/scoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score: 0 / 100"
+        android:textSize="18sp"
+        android:layout_marginBottom="20dp"/>
+
+    <Button android:id="@+id/btn_power_stone" android:text="Power Stone Challenge" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <Button android:id="@+id/btn_space_stone" android:text="Space Stone Challenge" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <Button android:id="@+id/btn_reality_stone" android:text="Reality Stone Challenge" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <Button android:id="@+id/btn_soul_stone" android:text="Soul Stone Challenge" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <Button android:id="@+id/btn_time_stone" android:text="Time Stone Challenge" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <Button android:id="@+id/btn_mind_stone" android:text="Mind Stone Challenge" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</LinearLayout>

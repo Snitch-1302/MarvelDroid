@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp">
+
+    <!-- Challenge Title -->
+    <TextView
+        android:id="@+id/challengeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Power Stone Challenge"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- User Input for Secret Key -->
+    <EditText
+        android:id="@+id/inputKey"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Enter Key Here"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:layout_marginTop="10dp"/>
+
+    <!-- TextView to Show Result -->
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="10dp"/>
+
+</LinearLayout>
