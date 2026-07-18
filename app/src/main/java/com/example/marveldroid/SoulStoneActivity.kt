@@ -1,20 +1,15 @@
 package com.example.marveldroid
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import kotlin.system.exitProcess
 
 class SoulStoneActivity : AppCompatActivity() {
-
     private lateinit var nameInput: EditText
     private lateinit var sacrificeButton: Button
     private lateinit var resultTextView: TextView
-
     private var tapCount = 0
     private var tapStartTime: Long = 0
 
@@ -28,16 +23,27 @@ class SoulStoneActivity : AppCompatActivity() {
 
         sacrificeButton.setOnClickListener {
             if (isBackdoorActivated()) {
-                resultTextView.text = "Secret ritual unlocked! 🖤\nFlag: InfinityCTF{hidden_truth}"
+                // FIX: previously a hardcoded constant string
+                // ("InfinityCTF{hidden_truth}"), so the same flag would be
+                // valid forever. Now generated dynamically at the moment
+                // the backdoor triggers, matching the dynamic-flag pattern
+                // used elsewhere in this app.
+                val flag = generateDynamicFlag("soul")
+                resultTextView.text = "Secret ritual unlocked! \uD83D\uDDA4\nFlag: $flag"
             } else {
                 val name = nameInput.text.toString().trim()
                 if (validateName(name)) {
-                    resultTextView.text = "Soul Stone rejects your offer! ❌"
+                    resultTextView.text = "Soul Stone rejects your offer! \u274C"
                 } else {
-                    resultTextView.text = "Invalid sacrifice. The stone remains untouched. ❌"
+                    resultTextView.text = "Invalid sacrifice. The stone remains untouched. \u274C"
                 }
             }
         }
+    }
+
+    private fun generateDynamicFlag(prefix: String): String {
+        val timestampSuffix = System.currentTimeMillis().toString().takeLast(6)
+        return "InfinityCTF{${prefix}_$timestampSuffix}"
     }
 
     private fun validateName(name: String): Boolean {
